@@ -60,12 +60,11 @@ $("#btn").on("click",function(){
 //on the basis of condition the input fields are display on the div elemnt
    if (age>=6 && age<=13) 
    {
-      
+      $("#btn").css("display","none");
+      $("#btn1").css("display","block");
+      $("#sub").css("display","block");
       if (gender[0].value=="female") 
       {
-         $("#btn").css("display","none");
-         $("#btn1").css("display","block");
-         $("#sub").css("display","block");
          $("#demo").append("<label>SchoolName:<input type=text id=sname class=form-control><br><label>ClassName:<input type=text id=cname class=form-control><br><label>FavoriteSubject:<input type=text id=favsub class=form-control><br><label>Hobbies:<input type=text id=hobb class=form-control><br>");
       }
       else
@@ -408,7 +407,7 @@ $(document).ready(function(){
             {
                alert("Please Fill your Collage name and does not contain number!");
             }
-            else if(isNaN(cname) || !cname )
+            else if(!cname.match(/^[A-Za-z0-9]+$/) || !cname )
             {
                alert("Please Fill your class name does not contain characters");
             }
@@ -428,7 +427,7 @@ $(document).ready(function(){
             {
                alert("Please Fill your Collage name and does not contain number!");
             }
-            else if(isNaN(cname) || !cname )
+            else if(!cname.match(/^[A-Za-z0-9]+$/) || !cname )
             {
                alert("Please Fill your class name does not contain characters");
             }
